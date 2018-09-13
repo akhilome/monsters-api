@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node ./bin/www",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "configure": "./bin/configuredb.sh"
+    "configure": "./bin/configuredb.sh",
+    "dev": "nodemon ./bin/www"
   },
   "repository": {
     "type": "git",
