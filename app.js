@@ -10,6 +10,15 @@ app.get('/monsters', (request, response, next) => {
   });
 });
 
+app.get('/monsters/:id', (request, response, next) => {
+  const { id } = request.params;
+
+  pool.query('SELECT * FROM monsters WHERE id = $1', [id], (err, res) => {
+    if (err) return next(err);
+    response.json(res.rows);
+  });
+});
+
 app.use((err, req, res, next) => {
   res.json(err); 
 });
